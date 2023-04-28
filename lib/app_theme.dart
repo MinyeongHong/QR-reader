@@ -55,6 +55,7 @@ final ThemeData lightTheme = ThemeData(
   primaryColor: AppTheme.defaultBlueLight,
   scaffoldBackgroundColor: AppTheme.backgroundBlueLight,
   shadowColor: AppTheme.backgroundBlueLight,
+  buttonTheme: ButtonThemeData(buttonColor: AppTheme.transparentBlueLight),
   appBarTheme: AppBarTheme(
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarColor: AppTheme.transparent,
@@ -93,6 +94,7 @@ final ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: AppTheme.defaultBlueDark,
   primaryColorDark: AppTheme.defaultBlueDark,
+  buttonTheme: ButtonThemeData(buttonColor: AppTheme.transparentBlueDark),
   scaffoldBackgroundColor: AppTheme.backgroundBlueDark,
   shadowColor: AppTheme.backgroundBlueDark,
   dialogBackgroundColor: AppTheme.transparentBlueDark,

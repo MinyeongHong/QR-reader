@@ -21,7 +21,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _timer;
     final vm = CameraViewModel();
 
     return Scaffold(
@@ -100,7 +99,60 @@ class HomeScreen extends StatelessWidget {
                         ),
                         onDetect: (capture) async {
                           final Barcode barcode = capture.barcodes.first;
-                          await _launchUrl(Uri.parse(barcode.rawValue!));
+
+                          final result = await showModalBottomSheet<bool>(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return Container(
+                                height: 150,
+                                color: Theme.of(context).cardColor,
+                                child: Center(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        barcode.rawValue!,
+                                        style: TextStyle(
+                                          fontSize: settingVm.currentFontSize,
+                                        ),
+                                      ),
+                                      Text(
+                                        '해당 웹 페이지로 이동하시겠습니까?',
+                                        style: TextStyle(
+                                          fontSize: settingVm.currentFontSize,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 20,
+                                      ),
+                                      TextButton(
+                                        child: Text(
+                                          '이동하기',
+                                          style: TextStyle(
+                                            fontSize: settingVm.currentFontSize,
+                                            color:
+                                                Theme.of(context).primaryColor,
+                                          ),
+                                        ),
+                                        onPressed: () {
+                                          Navigator.pop(context, true);
+                                        },
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+
+                          if (result != null && result) {
+                            await _launchUrl(
+                              Uri.parse(barcode.rawValue!),
+                            );
+                          }
                         },
                         errorBuilder: (BuildContext context,
                             MobileScannerException error, Widget? child) {
@@ -131,16 +183,12 @@ class HomeScreen extends StatelessWidget {
             ),
             GestureDetector(
               onTapDown: (details) {
-                _timer = Timer(const Duration(milliseconds: 100), () {
-                  vm.onCamera(true);
-                });
+                vm.onCamera(true);
               },
               onTapCancel: () {
-                _timer?.cancel();
                 vm.onCamera(false);
               },
               onTapUp: (details) {
-                _timer?.cancel();
                 vm.onCamera(false);
               },
               child: Container(
