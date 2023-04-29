@@ -125,7 +125,7 @@ class HomeScreen extends StatelessWidget {
                                           fontSize: settingVm.currentFontSize,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 20,
                                       ),
                                       TextButton(

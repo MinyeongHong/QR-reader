@@ -18,7 +18,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   final SettingViewModel settingVm;
 
-  MyApp(this.settingVm);
+  const MyApp(this.settingVm, {super.key});
 
   @override
   Widget build(BuildContext context) {
