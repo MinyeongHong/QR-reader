@@ -20,10 +20,14 @@ MobX 상태관리를 이용하여 테마 설정 및 폰트 사이즈 설정, 카
   
   flutter_mobx: ^2.0.6+5
 
-<iOS Screenshot>
-<img width="326" alt="스크린샷 2023-04-29 오후 8 21 46" src="https://user-images.githubusercontent.com/78523467/235299993-bd10d234-4296-45c9-a990-e12721e175e1.png">
-<img width="326" alt="스크린샷 2023-04-29 오후 8 22 04" src="https://user-images.githubusercontent.com/78523467/235300001-f2e78d53-4969-4c1c-9c54-74a4a8fa9411.png">
 
-<Android Screenshot>
+### Android Screenshot
+<img width="295" alt="스크린샷 2023-04-29 오후 8 28 37" src="https://user-images.githubusercontent.com/78523467/235300212-18f90827-b98b-456b-b576-e654d41bf885.png">
 <img width="295" alt="스크린샷 2023-04-29 오후 8 24 03" src="https://user-images.githubusercontent.com/78523467/235300053-c09ab2f7-f56e-46d4-adf6-f6d3370ed147.png">
 <img width="295" alt="스크린샷 2023-04-29 오후 8 24 17" src="https://user-images.githubusercontent.com/78523467/235300063-b2572c3a-9b7e-4f97-a22d-ea10c34d2839.png">
+
+
+
+### iOS Screenshot
+<img width="326" alt="스크린샷 2023-04-29 오후 8 21 46" src="https://user-images.githubusercontent.com/78523467/235299993-bd10d234-4296-45c9-a990-e12721e175e1.png">
+<img width="326" alt="스크린샷 2023-04-29 오후 8 22 04" src="https://user-images.githubusercontent.com/78523467/235300001-f2e78d53-4969-4c1c-9c54-74a4a8fa9411.png">
